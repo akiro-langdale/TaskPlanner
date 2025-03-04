@@ -13,4 +13,8 @@
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TaskPlanner.Data\TaskPlanner.Data.csproj" />
+  </ItemGroup>
+
 </Project>

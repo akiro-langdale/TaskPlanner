@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="TaskPlanner.App.Views.UserControls.BDViewerUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TaskPlanner.App.Views.UserControls"
+             xmlns:viewmodels="clr-namespace:TaskPlanner.App.ViewModels"
+             xmlns:usercontrols="clr-namespace:TaskPlanner.App.Views.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Resources>     
+            <DataTemplate DataType="{x:Type viewmodels:TasksListViewModel}">
+                <usercontrols:TasksListUC/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:UsersListViewModel}">
+                <usercontrols:UsersListUC/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:TaskAssignmentsListViewModel}">
+                <usercontrols:TaskAssignmentsListUC/>
+            </DataTemplate>
+        </Grid.Resources>
+        <ContentControl Content="{Binding CurrentViewModel}"/>
+    </Grid>
+</UserControl>

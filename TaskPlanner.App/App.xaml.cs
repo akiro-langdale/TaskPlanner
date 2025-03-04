@@ -3,9 +3,11 @@
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using System.Windows;
+    using TaskPlanner.App.Tasks;
     using TaskPlanner.App.Utils;
     using TaskPlanner.App.ViewModels;
     using TaskPlanner.App.Views.Windows;
+    using TaskPlanner.Data.DBContext;
 
     /// <summary>
     /// Interaction logic for App.xaml
@@ -19,9 +21,21 @@
             _host = Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
                 {
+                    services.AddDbContext<TaskPlannerDBContext>();
+
                     services.AddSingleton<MainWindow>();
+                    services.AddSingleton<BDViewerVeiwModel>();
+                    services.AddSingleton<NavigationTask>();
+                    services.AddSingleton<DataTask>();
+
+                    services.AddTransient<AddEditUserWindow>();
+                    services.AddTransient<AddEditTaskWindow>();
+                    services.AddTransient<AddEditTaskAssignmentWindow>();
 
                     services.AddTransient<MainWindowViewModel>();
+                    services.AddTransient<UsersListViewModel>();
+                    services.AddTransient<TasksListViewModel>();
+                    services.AddTransient<TaskAssignmentsListViewModel>();
                 })
                 .Build();
         }

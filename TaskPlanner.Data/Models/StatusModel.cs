@@ -1,8 +1,8 @@
 ﻿namespace TaskPlanner.Data.Models
 {
-    public class StatusModel
+    using TaskPlanner.Data.Models.Base;
+    public class StatusModel : Model
     {
-        public required int StatusId { get; set; }
         public required string StatusName { get; set; }
     }
 }

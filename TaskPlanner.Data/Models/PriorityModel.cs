@@ -1,8 +1,8 @@
 ﻿namespace TaskPlanner.Data.Models
 {
-    public class PriorityModel
+    using TaskPlanner.Data.Models.Base;
+    public class PriorityModel : Model
     {
-        public required int PriorityId { get; set; }
         public required string PriorityName { get; set; }
     }
 }

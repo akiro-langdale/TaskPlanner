@@ -1,11 +1,11 @@
 ﻿namespace TaskPlanner.Data.Models
 {
-    public class TaskModel
+    using TaskPlanner.Data.Models.Base;
+    public class TaskModel : Model
     {
-        public required int TaskId { get; set; }
-        public required int StatusId { get; set; }
-        public required int PriorityId { get; set; }
-        public required string Title { get; set; }
+        public int StatusId { get; set; }
+        public int PriorityId { get; set; }
+        public string Title { get; set; }
         public string? Description { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }

@@ -1,8 +1,8 @@
 ﻿namespace TaskPlanner.Data.Models
 {
-    public class TaskAssignmentModel
+    using TaskPlanner.Data.Models.Base;
+    public class TaskAssignmentModel : Model
     {
-        public required int TaskAssignmentId { get; set; }
         public required int TaskId { get; set; }
         public required int UserId { get; set; }
         public DateTime AssignedAt { get; set; }

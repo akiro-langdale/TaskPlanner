@@ -45,5 +45,7 @@
             OnPropertyChanged(PropertyName);
             return true;
         }
+
+        public virtual void Dispose() { }
     }
 }

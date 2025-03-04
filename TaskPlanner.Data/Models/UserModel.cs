@@ -1,11 +1,11 @@
 ﻿namespace TaskPlanner.Data.Models
 {
     using System.ComponentModel.DataAnnotations;
-    public class UserModel
+    using TaskPlanner.Data.Models.Base;
+    public class UserModel : Model
     {
-        public required int UserId { get; set; }
-        public required string Username { get; set; }
-        public required string PasswordHash { get; set; }
+        public string Username { get; set; }
+        public string PasswordHash { get; set; }
 
         [RegularExpression(@"[0-9]\d{18}$")]
         public string? TelegramId { get; set; }
